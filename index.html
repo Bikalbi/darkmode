@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 10%;
+            font-size: 5rem;
+        }
+
+        .icon {
+            background-color: darkslategrey;
+            /* background-image: url(pics/1.svg); */
+            background-repeat: no-repeat;
+            background-size: 50px 50px;
+            height: 9vh;
+            width: 10vw;
+            margin-left: 50%;
+            margin-top: 5%;
+            border-radius: 40rem;
+            position: relative;
+            transition:1s;
+        }
+
+        .icon img {
+            height: 50px;
+        }
+
+        .icon::before {
+            position: absolute;
+            top: 8%;
+            left: 5px;
+            height: 50px;
+            width: 50px;
+            background-color: red;
+            border-radius: 100%;
+            cursor: pointer;
+            
+            content: "";
+        }
+
+        /* .icon::after{
+            left:100px;
+            transform: translateX(-100%);
+
+
+        } */
+
+        .icon.active::before {
+            left: 60%;
+            background-color: white;transition:0.5s;
+
+        }
+
+        body.night {
+            background-color: black;
+            color: white;
+        }
+
+
+        /* .butt{
+       position:absolute;
+        height:50px;
+        width: 50px;
+        background-color:red;
+        border-radius: 100%;
+        top:10px;
+        left:4px;
+     } */
+    </style>
+</head>
+
+<body>
+    <div class="icon">
+        <!-- <div class="butt"></div>   -->
+    </div>
+
+    <h1>Click On The Toggle Button</h1>
+
+    <!-- <script src="/script.js"></script> -->
+    <script>
+        let cont = document.getElementsByTagName('body')[0]
+        let darkmode = document.getElementsByClassName('icon')[0]
+        darkmode.addEventListener('click', function () {
+            darkmode.classList.toggle('active');
+            cont.classList.toggle('night');
+        });
+    </script>
+</body>
+
+</html>
